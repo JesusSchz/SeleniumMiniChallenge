@@ -48,15 +48,24 @@ public class ElementsTest {
 
         String elementText = "Elementos";
         String elements = newDriver.findElement(By.xpath("//h5[contains(text(),'Elements')]")).getText();
-        softassert.assertEquals(elementText,elements, "Elements not found: ");
+        softassert.assertEquals(elements, elementText,"Elements not found: ");
 
-        softassert.assertEquals(forsText,forms,"Forms not found: ");
+        softassert.assertEquals(forms, forsText,"Forms not found: ");
 
-        softassert.assertEquals(widgetsText,widgets,"Widgets not found");
+        softassert.assertEquals(widgets,widgetsText, "Widgets not found");
         softassert.assertAll();
 
     }
 
+    @Test
+    public void otherTest() {
+        SoftAssert softassert = new SoftAssert();
+        String a = "aa";
+        String b = "bb";
+        String c = "aa";
+        softassert.assertEquals(a, b, "iguales");
+        softassert.assertAll();
+    }
 
     @org.testng.annotations.BeforeClass
     public static void setUpClass() throws Exception {
